@@ -1,0 +1,13 @@
+{
+  "name": "park",
+  "version": "1.1.0",
+  "description": "",
+  "attribution": "Rendered with <a href=\"https://www.maptiler.com/desktop/\">MapTiler Desktop</a>",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "14",
+  "maxzoom": "15",
+  "scale": "1.000000",
+  "bounds": [23.33455164, 42.66641649, 23.34831096, 42.67767856],
+  "profile": "mercator"
+}
