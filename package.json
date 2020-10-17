@@ -5,10 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    "watch": "babel ./src --out-dir ./lib",
-    "start:dev": "webpack-dev-server",
-    "start": "http-server ./lib"
+    "webpack": "rm -rf ./lib && webpack",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +14,8 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "babel-cli": "^6.26.0",
-    "http-server": "^0.12.3",
+    "copy-webpack-plugin": "^6.2.1",
+    "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
