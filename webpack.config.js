@@ -34,9 +34,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'lib'),
     compress: true,
-    host: '192.168.8.101',
+    host: '0.0.0.0',
     https: true,
-    port: 9000,
+    port: 6821,
     hot: true
   }
 };
