@@ -5,8 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-	<h1>Running</h1>
-	<button onclick="javascript: window.start()">Start</button>
+  <div id="gps">
+    <button id="ble-start-button">Start GPS</button>
+  </div>
+  <div id="map">
+    <fieldset id="map-select-container">
+      <legend>Choose map layer</legend>
+      <select id="map-select"></select>
+      <button id="load-button">Load</button>
+    </fieldset>
+  </div>
+
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="./app.bundle.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 <script src="app.bundle.js"></script></body>
 </html>

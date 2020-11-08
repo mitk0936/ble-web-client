@@ -1,0 +1,47 @@
+html, body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#gps {
+  width: 100vw;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+#gps p {
+  color: #fff;
+  font-size: 16px;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+  z-index: 10;
+}
+
+#map-select-container {
+  display: block;
+  width: 200px;
+  position: absolute;
+  top: 15vh;
+  border: 1px solid #ccc;
+}
+
+#map-select, #load-button, #ble-start-button {
+  display: block;
+  width: 200px;
+  margin: 10px;
+}

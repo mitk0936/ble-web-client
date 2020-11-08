@@ -9,15 +9,6 @@ export const arrowIcon = {
   scale: 1.0
 };
 
-const trackLocation = ({ onSuccess, onError = () => { } }) => {
-  if ('geolocation' in navigator === false) {
-    return onError(new Error('Geolocation is not supported by your browser.'));
-  }
-
-  // Use watchPosition instead.
-  return navigator.geolocation.watchPosition(onSuccess, onError);
-};
-
 export default ({ domContainer, mapPath, bounds, minzoom, maxzoom }) => {
   const [aCoord, bCoord, cCoord, dCoord] = bounds;
 
@@ -72,14 +63,5 @@ export default ({ domContainer, mapPath, bounds, minzoom, maxzoom }) => {
   map.setMapTypeId('satellite');
   map.overlayMapTypes.insertAt(0, maptiler);
 
-  const marker = new google.maps.Marker({ map, icon: arrowIcon });
-  // Use the new trackLocation function.
-  trackLocation({
-    onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
-      marker.setPosition({ lat, lng });
-    },
-    onError: err => lert(`Error: ${err.code || err.message}`)
-  });
-  
   return map;
 };

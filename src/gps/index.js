@@ -2,7 +2,7 @@ import hm10 from './hm-10';
 
 const positioningReg = new RegExp(/LA([0-9]{2}.[0-9]*)LO([0-9]{2}.[0-9]+)\|/gm);
 
-let updateViwInterval = null;
+let updateViewInterval = null;
 let lastFix = null;
 
 const updateView = ({ domContainer }) => {
@@ -20,7 +20,7 @@ const updateView = ({ domContainer }) => {
 export default ({ domContainer, onPosition }) => {
   let buffer = '';
 
-  updateViwInterval = setInterval(() => {
+  updateViewInterval = setInterval(() => {
     updateView({ domContainer });
   }, 1000);
 
@@ -39,7 +39,8 @@ export default ({ domContainer, onPosition }) => {
 
           if (lat && lng) {
             lastFix = parseInt(Date.now() / 1000, 10);
-            onPosition({ lat, lng });
+            // bug with NMEA parser on the device
+            onPosition({ lat: lng, lng: lat });
           }
         });
       }
